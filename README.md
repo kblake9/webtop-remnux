@@ -17,3 +17,25 @@ remnux info: https://remnux.org/
 - built new docker container `docker build -t webtop-remnux .` building the container may take about 40 mins to an hour.
 - use docker-compose file to run the docker container - modify the file as needed (change the password...) `docker-compose up -d`
 - visit http://localhost:3000 to access the webtop
+
+alternatively, if you want the container faster, save the following in a docker-compose.yml file:
+```
+---
+version: "2.1"
+services:
+  webtop:
+    image: ghcr.io/boredhackerblog/webtop-remnux/webtop-remnux:latest
+    container_name: webtop-remnux
+    privileged: true #optional
+    environment:
+      - PUID=1000
+      - PGID=1000
+    volumes:
+      - ./data:/config
+    ports:
+      - 3000:3000
+    shm_size: "4gb" #optional
+    restart: unless-stopped
+```
+
+then run `docker-compose up -d` and visit http://localhost:3000 in your browser.
