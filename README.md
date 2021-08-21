@@ -14,6 +14,6 @@ remnux info: https://remnux.org/
 
 # How to run
 - clone this repo `git clone https://github.com/BoredHackerBlog/webtop-remnux && cd webtop-remnux`
-- built new docker container `docker build -t webtop-remnux .`
+- built new docker container `docker build -t webtop-remnux .` building the container may take about 40 mins to an hour.
 - use docker-compose file to run the docker container - modify the file as needed (change the password...) `docker-compose up -d`
 - visit http://localhost:3000 to access the webtop
