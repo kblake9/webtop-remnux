@@ -4,9 +4,11 @@ FROM ghcr.io/linuxserver/webtop:ubuntu-xfce
 
 # RUN sudo add-apt-repository --yes ppa:micahflee/ppa
 #RUN sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa
+RUN sudo add-apt-repository ppa:flatpak/stable
 RUN sudo apt update
 RUN sudo apt upgrade -y
 # RUN sudo apt install torbrowser-launcher -y
+RUN sudo apt install flatpak -y
 RUN flatpak install flathub com.github.micahflee.torbrowser-launcher
 RUN sudo apt install thunderbird -y
 
