@@ -8,6 +8,7 @@ RUN sudo apt update
 RUN sudo apt upgrade -y
 # RUN sudo apt install torbrowser-launcher -y
 RUN sudo apt install flatpak -y
+RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 RUN flatpak install flathub com.github.micahflee.torbrowser-launcher
 RUN sudo apt install thunderbird -y
 
