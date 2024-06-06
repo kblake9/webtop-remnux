@@ -11,6 +11,7 @@ RUN sudo apt install flatpak -y
 RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 RUN flatpak install flathub com.github.micahflee.torbrowser-launcher -y
 RUN sudo apt install thunderbird -y
+RUN sudo apt install python3-setuptools -y
 
 # copied from remnux docker repo
 RUN export DEBIAN_FRONTEND=noninteractive && \
