@@ -25,9 +25,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest noble main" | tee /etc/apt/sources.list.d/salt.list && \
     apt update -y && \
     apt update -y && \
-    apt-get install -y salt-minion && \
-   # apt-get install -y salt-common && \
-    curl -L https://bootstrap.saltproject.io | sudo sh -s -- && \
+    # apt-get install -y salt-minion && \
+    apt-get install -y salt-common && \
+    # curl -L https://bootstrap.saltproject.io | sudo sh -s -- && \
     sudo git clone https://github.com/REMnux/salt-states.git /srv/salt && \
 
     salt-call -l info --local state.sls remnux.cloud pillar='{"remnux_user": "remnux"}' && \
