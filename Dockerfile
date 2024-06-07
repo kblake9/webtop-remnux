@@ -20,9 +20,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     # sudo -s && \
     # wget -O - https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest/SALT-PROJECT-GPG-PUBKEY-2023.gpg | apt-key add - && \
     # echo "deb [arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest noble main" | tee /etc/apt/sources.list.d/saltstack.list && \
-    mkdir -p /etc/apt/keyrings
-    curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg
-    echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/3007 jammy main" \
+    mkdir -p /etc/apt/keyrings && \
+    curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg && \
+    echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/22.04/amd64/3007 jammy main" 
         | tee /etc/apt/sources.list.d/salt.list && \
     apt update -y && \
     apt update -y && \
