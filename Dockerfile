@@ -23,6 +23,9 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt update -y && \
     apt-get install -y salt-common && \
     sudo git clone https://github.com/REMnux/salt-states.git /srv/salt && \
+    python3 -m venv tutorial_env && \
+    source tutorial_env/bin/activate && \
+    pip install backports.ssl_match_hostname && \
     sudo salt-call -l debug --local state.sls remnux.loud pillar='{"remnux_user": "remnux"}' && \
     rm -rf /srv && \
     rm -rf /var/cache/salt/* && \
