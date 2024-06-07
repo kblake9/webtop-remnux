@@ -19,7 +19,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get install -y wget gnupg git && \
     sudo -s && \
     wget -O - https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest/SALT-PROJECT-GPG-PUBKEY-2023.gpg | apt-key add - && \
-    echo "deb [arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest focal main" | tee /etc/apt/sources.list.d/saltstack.list && \
+    echo "deb [arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/24.04/amd64/latest noble main" | tee /etc/apt/sources.list.d/saltstack.list && \
     apt update -y && \
     apt-get install -y salt-minion && \
    # apt-get install -y salt-common && \
