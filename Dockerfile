@@ -22,6 +22,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     echo "deb [arch=amd64] https://repo.saltproject.io/py3/ubuntu/20.04/amd64/latest focal main" | tee /etc/apt/sources.list.d/saltstack.list && \
     apt update -y && \
    # apt-get install -y salt-common && \
+    curl -L https://bootstrap.saltproject.io | sudo sh -s -- && \
     sudo git clone https://github.com/REMnux/salt-states.git /srv/salt && \
 
     salt-call -l info --local state.sls remnux.cloud pillar='{"remnux_user": "remnux"}' && \
