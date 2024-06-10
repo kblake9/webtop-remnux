@@ -24,7 +24,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     
     apt-get update && \
     apt-get install -y salt-common && \
-    git clone https://github.com/REMnux/salt-states.git /srv/salt && \
+    # git clone https://github.com/REMnux/salt-states.git /srv/salt && \
     salt-call -l info --local state.sls remnux.cloud pillar='{"remnux_user": "remnux"}' && \
     rm -rf /srv && \
     rm -rf /var/cache/salt/* && \
