@@ -2,26 +2,23 @@
 
 FROM ghcr.io/linuxserver/webtop:ubuntu-xfce
 
-# RUN sudo add-apt-repository --yes ppa:micahflee/ppa
-#RUN sudo add-apt-repository ppa:ubuntu-mozilla-security/ppa
+
 RUN sudo apt update
 RUN sudo apt upgrade -y
-# RUN sudo apt install torbrowser-launcher -y
+
 RUN sudo apt install flatpak -y
 RUN flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 RUN flatpak install flathub com.github.micahflee.torbrowser-launcher -y
 RUN sudo apt install thunderbird -y
 RUN sudo apt install python3-setuptools -y
 
-# copied from remnux docker repo
-# copied from remnux docker repo
+
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
     apt-get install -y wget gnupg git && \
-    # mkdir /etc/apt/keyrings && \
+
     apt-get install ca-certificates && \
-    # sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg | apt-key add - && \
-    # echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/3005 focal main" | sudo tee /etc/apt/sources.list.d/salt.list && \
+    
     wget -nv -O - https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg | apt-key add - && \
     echo deb [arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/3007 focal main > /etc/apt/sources.list.d/salt.list && \
     
