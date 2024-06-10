@@ -23,7 +23,7 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     # sudo curl -fsSL -o /etc/apt/keyrings/salt-archive-keyring-2023.gpg https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/SALT-PROJECT-GPG-PUBKEY-2023.gpg | apt-key add - && \
     # echo "deb [signed-by=/etc/apt/keyrings/salt-archive-keyring-2023.gpg arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/3005 focal main" | sudo tee /etc/apt/sources.list.d/salt.list && \
     wget -nv -O - https://repo.saltproject.io/py3/ubuntu/20.04/amd64/latest/salt-archive-keyring.gpg | apt-key add - && \
-    echo deb [arch=amd64] https://repo.saltproject.io/py3/ubuntu/20.04/amd64/3005 focal main > /etc/apt/sources.list.d/salt.list && \
+    echo deb [arch=amd64] https://repo.saltproject.io/salt/py3/ubuntu/20.04/amd64/3005 focal main > /etc/apt/sources.list.d/salt.list && \
     
     apt-get update && \
     apt-get install -y salt-common && \
