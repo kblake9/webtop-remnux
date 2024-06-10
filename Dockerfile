@@ -1,4 +1,4 @@
-# depending on cpu, ram, & internet speed, this may take 40 mins to an hour
+
 
 FROM ghcr.io/linuxserver/webtop:ubuntu-xfce
 
